@@ -26,7 +26,6 @@ import 'package:socket_io_client/socket_io_client.dart' as sio;
 Future<void> main() async {
   await OTel.initialize(
     serviceName: 'my-app',
-    endpoint: 'http://localhost:4317',
   );
 
   final socket = sio.io('http://localhost:3000');
