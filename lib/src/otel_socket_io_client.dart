@@ -84,7 +84,7 @@ T tracedSocketEmit<T>({
     span.addAttributes(
       OTel.attributes([
         OTel.attributeString(
-          ErrorResource.errorType.key,
+          ErrorAttributes.errorType.key,
           e.runtimeType.toString(),
         ),
       ]),
@@ -124,7 +124,7 @@ EventHandler tracedSocketHandler(
       span.addAttributes(
         OTel.attributes([
           OTel.attributeString(
-            ErrorResource.errorType.key,
+            ErrorAttributes.errorType.key,
             e.runtimeType.toString(),
           ),
         ]),

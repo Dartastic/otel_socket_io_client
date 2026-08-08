@@ -1,10 +1,9 @@
 name: otel_socket_io_client
 description: >-
-  OpenTelemetry instrumentation for package:socket_io_client. Wraps
-  Socket.IO emit calls in PRODUCER spans and Socket.IO on() handlers
-  in CONSUMER spans following the OTel messaging semantic conventions
-  (messaging.system=socket.io, messaging.destination.name=<event>).
-version: 0.1.0-beta.1-wip
+  OpenTelemetry instrumentation for package:socket_io_client. Wraps emit
+  calls in PRODUCER spans and on() handlers in CONSUMER spans following OTel
+  messaging semconv.
+version: 0.1.0-wip
 repository: https://github.com/dartastic/otel_socket_io_client
 homepage: https://dartastic.io
 
@@ -12,8 +11,8 @@ environment:
   sdk: ^3.0.0
 
 dependencies:
-  dartastic_opentelemetry: ^1.1.0-beta.4
-  dartastic_opentelemetry_api: ^1.0.0-beta.6
+  dartastic_opentelemetry: ^1.1.0-beta.12
+  dartastic_opentelemetry_api: ^1.0.0-rc.1
   socket_io_client: ^3.0.0
 
 dev_dependencies:
