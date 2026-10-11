@@ -1,7 +1,7 @@
 // Licensed under the Apache License, Version 2.0
 // Copyright 2025, Mindful Software LLC, All rights reserved.
 
-import 'package:dartastic_opentelemetry/dartastic_opentelemetry.dart';
+import 'package:dartastic_opentelemetry_api/dartastic_opentelemetry_api.dart';
 import 'package:socket_io_client/socket_io_client.dart' as sio;
 
 import 'otel_socket_io_client_suppression.dart';
@@ -14,7 +14,7 @@ typedef EventHandler = dynamic Function(dynamic data);
 const _tracerName = 'otel_socket_io_client';
 const _messagingSystem = 'socket.io';
 
-Tracer _tracer() => OTel.tracerProvider().getTracer(_tracerName);
+APITracer _tracer() => OTelAPI.tracerProvider().getTracer(_tracerName);
 
 /// Typed attribute keys for Socket.IO instrumentation. The OTel
 /// messaging semantic conventions define these names; we use a local
@@ -44,7 +44,7 @@ Attributes _attrs({
   required String operation,
   String? namespace,
 }) =>
-    OTel.attributesFromMap(<String, Object>{
+    OTelAPI.attributesFromMap(<String, Object>{
       Messaging.messagingSystem.key: _messagingSystem,
       SocketIoSemantics.messagingOperation.key: operation,
       SocketIoSemantics.messagingDestinationName.key: event,
@@ -82,8 +82,8 @@ T tracedSocketEmit<T>({
     return invoke();
   } catch (e, st) {
     span.addAttributes(
-      OTel.attributes([
-        OTel.attributeString(
+      OTelAPI.attributes([
+        OTelAPI.attributeString(
           ErrorAttributes.errorType.key,
           e.runtimeType.toString(),
         ),
@@ -122,8 +122,8 @@ EventHandler tracedSocketHandler(
       return handler(data);
     } catch (e, st) {
       span.addAttributes(
-        OTel.attributes([
-          OTel.attributeString(
+        OTelAPI.attributes([
+          OTelAPI.attributeString(
             ErrorAttributes.errorType.key,
             e.runtimeType.toString(),
           ),
