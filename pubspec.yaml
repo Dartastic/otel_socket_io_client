@@ -3,7 +3,7 @@ description: >-
   OpenTelemetry instrumentation for package:socket_io_client. Wraps emit
   calls in PRODUCER spans and on() handlers in CONSUMER spans following OTel
   messaging semconv.
-version: 1.0.0-wip
+version: 0.2.0-wip
 repository: https://github.com/dartastic/otel_socket_io_client
 homepage: https://dartastic.io
 
@@ -11,12 +11,12 @@ environment:
   sdk: ^3.0.0
 
 dependencies:
-  dartastic_opentelemetry: ^1.1.0-beta.17
   dartastic_opentelemetry_api: '>=1.0.0-rc.4 <1.0.0-rc.5'
   socket_io_client: ^3.0.0
 
 dev_dependencies:
   dart_flutter_team_lints: ^3.5.2
+  dartastic_opentelemetry: ^1.1.0-beta.17
   pub_semver: ^2.0.0
   pubspec_parse: ^1.5.0
   test: ^1.26.3
