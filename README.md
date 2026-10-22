@@ -114,7 +114,7 @@ semantic conventions (`messaging.system=socket.io`,
 ```yaml
 dependencies:
   socket_io_client: ^3.0.0
-  otel_socket_io_client: ^0.2.0
+  otel_socket_io_client: ^0.2.1
 ```
 
 ## Use
