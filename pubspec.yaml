@@ -3,7 +3,7 @@ description: >-
   OpenTelemetry instrumentation for socket_io_client by Dartastic.io. Adds
   standard OpenTelemetry observability to applications that use
   socket_io_client.
-version: 0.2.1
+version: 0.2.2-wip
 repository: https://github.com/dartastic/otel_socket_io_client
 homepage: https://dartastic.io
 
